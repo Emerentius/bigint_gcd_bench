@@ -1,0 +1,16 @@
+[workspace]
+[package]
+authors = ["Emerentius <emerentius@arcor.de>"]
+name = "bigint_gcd_bench"
+version = "0.1.0"
+
+[dependencies]
+num = "0.1.41"
+rand = "0.4.2"
+time = "0.1.39"
+
+[dependencies.mod-num-bigint]
+path = "mod-num-bigint"
+
+[dependencies.num-bigint]
+path = "num-bigint"
