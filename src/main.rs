@@ -49,11 +49,20 @@ fn main() {
         }
 
         assert!(
-            gcds.into_iter().map(|i| i.to_bytes_le()).eq(
+            gcds.iter().map(|i| i.to_bytes_le()).eq(
                 gcds2.into_iter().map(|i| i.to_bytes_le())
             )
         );
 
         println!("n: {:2} =>\t{:.4}s\t\t{:.4}s\t\t{:3.2}", n, duration, duration2, duration / duration2);
+        /*
+        let mut counts = std::collections::BTreeMap::new();
+        for gcd in gcds {
+            *counts.entry(gcd).or_insert(0) += 1;
+        }
+        for (num, count) in counts {
+            println!("{:20}: {}", num, count);
+        }
+        */
     }
 }
